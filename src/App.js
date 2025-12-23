@@ -8,7 +8,7 @@ const DUMMY_EXPENSES = [];
 function App() {
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
   const [filteredYear, setFilteredYear] = useState('2025');
-  const [filteredMonth, setFilteredMonth] = useState('2'); // Default to March (index 2)
+  const [filteredMonth, setFilteredMonth] = useState('2'); 
 
   const addExpenseHandler = (expense) => {
     setExpenses((prevExpenses) => [expense, ...prevExpenses]);
@@ -18,7 +18,7 @@ function App() {
     setExpenses((prevExpenses) => prevExpenses.filter(ex => ex.id !== expenseId));
   };
 
-  // --- MULTI-LEVEL FILTRATION LOGIC ---
+ 
   const filteredExpenses = expenses.filter((expense) => {
     const matchesYear = expense.date.getFullYear().toString() === filteredYear;
     const matchesMonth = expense.date.getMonth().toString() === filteredMonth;
